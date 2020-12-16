@@ -43,9 +43,6 @@ main = do
   let strips = map (selectStrip grid cursor) [L, R, U, D]
   mapM_ printStrip strips
 
-searchGrid :: Grid -> Cursor -> (Strip -> Bool) -> Maybe [Strip]
-searchGrid g c p = 
-
 searchUnderCursor :: Grid -> Cursor -> (Strip -> Bool) -> Maybe Strip
 searchUnderCursor g c p = case filtered of
   (x : _) -> Just x
