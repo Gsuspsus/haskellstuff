@@ -6,7 +6,7 @@ section xs = let ([n], rest) = (splitAt 1 $ lines xs) in (read n,rest)
 cleanExpr :: String -> String
 cleanExpr = filter (not . isSpace)
 
-parseOp :: Char -> (Int -> Int -> Int)
+parseOp :: (Integral a) => Char -> (a -> a -> a)
 parseOp op = case op of 
                 '+' -> (+)
                 '-' -> (-)
